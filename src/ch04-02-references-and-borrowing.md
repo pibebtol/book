@@ -115,9 +115,9 @@ Here’s the error:
 
 This error says that this code is invalid because we cannot borrow `s` as
 mutable more than once at a time. The first mutable borrow is in `r1` and must
-last until it’s used in the `println!`, but between the creation of that
-mutable reference and its usage, we tried to create another mutable reference
-in `r2` that borrows the same data as `r1`.
+last at least until it’s used in the `println!`, but between the creation of
+that mutable reference and its usage, we tried to create another mutable
+reference in `r2` that borrows the same data as `r1`.
 
 The restriction preventing multiple mutable references to the same data at the
 same time allows for mutation but in a very controlled fashion. It’s something
